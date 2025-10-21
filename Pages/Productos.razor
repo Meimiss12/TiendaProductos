@@ -1,0 +1,273 @@
+@page "/productos"
+@using TiendaProductos.Models
+@using Microsoft.AspNetCore.Components.Web
+@using System.ComponentModel.DataAnnotations
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+
+<PageTitle>Productos</PageTitle>
+
+<div class="container mt-4">
+    <h2>Gestión de Productos</h2>
+
+    <!-- Formulario de producto -->
+    <EditForm Model="@productoActual" OnValidSubmit="@GuardarProducto">
+        <DataAnnotationsValidator />
+
+        @if (!string.IsNullOrEmpty(mensajeError))
+        {
+            <div class="alert alert-danger">@mensajeError</div>
+        }
+
+        <div class="mb-3">
+            <label class="form-label">Inventario</label>
+            <InputNumber class="form-control" @bind-Value="productoActual.Inventario" />
+            <ValidationMessage For="@(() => productoActual.Inventario)" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <InputText class="form-control" @bind-Value="productoActual.Nombre" />
+            <ValidationMessage For="@(() => productoActual.Nombre)" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Departamento</label>
+            <InputRadioGroup @bind-Value="productoActual.Departamento">
+                <div class="form-check form-check-inline">
+                    <InputRadio class="form-check-input" Value="@("Frutas")" />
+                    <label class="form-check-label">Frutas</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <InputRadio class="form-check-input" Value="@("Verduras")" />
+                    <label class="form-check-label">Verduras</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <InputRadio class="form-check-input" Value="@("Lácteos")" />
+                    <label class="form-check-label">Lácteos</label>
+                </div>
+            </InputRadioGroup>
+            <ValidationMessage For="@(() => productoActual.Departamento)" />
+        </div>
+
+        @if (!modoEdicion)
+        {
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        }
+        else
+        {
+            <button type="submit" class="btn btn-success me-2">Actualizar</button>
+            <button type="button" class="btn btn-secondary" @onclick="CancelarEdicion">Cancelar</button>
+        }
+    </EditForm>
+
+    <hr />
+
+    <!-- Botones Existencias/Listado -->
+    <div class="mb-3">
+        @if (!mostrarExistencias)
+        {
+            <button class="btn btn-info" @onclick="MostrarExistencias">Existencias</button>
+        }
+        else
+        {
+            <button class="btn btn-secondary" @onclick="MostrarListado">Listado</button>
+        }
+    </div>
+
+    <!-- Lista de productos -->
+    @if (!mostrarExistencias)
+    {
+        <h4>Lista de Productos</h4>
+        @if (productos.Count > 0)
+        {
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Inventario</th>
+                        <th>Nombre</th>
+                        <th>Departamento</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var p in productos)
+                    {
+                        <tr>
+                            <td>@p.Inventario</td>
+                            <td>@p.Nombre</td>
+                            <td>@p.Departamento</td>
+                            <td>
+                                <button class="btn btn-sm btn-warning me-2" @onclick="() => EditarProducto(p)">
+                                    <i class="bi bi-pencil-fill"></i>
+                                </button>
+                                <button class="btn btn-sm btn-danger" @onclick="() => EliminarProducto(p)">
+                                    <i class="bi bi-trash-fill"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>No hay productos registrados.</p>
+        }
+    }
+    else
+    {
+        <!-- Vista Existencias -->
+        <h4>Existencias por Departamento</h4>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Departamento</th>
+                    <th>Cantidad de Productos</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var existencia in ObtenerExistencias())
+                {
+                    <tr>
+                        <td>@existencia.Departamento</td>
+                        <td>@existencia.Cantidad</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
+
+@code {
+    private List<Producto> productos = new List<Producto>();
+    private Producto productoActual = new Producto();
+    private string mensajeError = "";
+    private bool modoEdicion = false;
+    private int inventarioOriginal;
+    private bool mostrarExistencias = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Cargar productos desde localStorage
+        var lista = await localStorage.GetItemAsync<List<Producto>>("productos");
+        if (lista != null)
+        {
+            productos = lista;
+        }
+    }
+
+    private async Task GuardarProducto()
+    {
+        mensajeError = "";
+
+        // Validaciones básicas
+        if (productoActual.Inventario <= 0)
+        {
+            mensajeError = "El inventario debe ser mayor a 0.";
+            return;
+        }
+
+        if (string.IsNullOrWhiteSpace(productoActual.Nombre))
+        {
+            mensajeError = "El nombre es obligatorio.";
+            return;
+        }
+
+        if (string.IsNullOrWhiteSpace(productoActual.Departamento))
+        {
+            mensajeError = "Debe seleccionar un departamento.";
+            return;
+        }
+
+        if (!modoEdicion)
+        {
+            if (productos.Exists(p => p.Inventario == productoActual.Inventario))
+            {
+                mensajeError = $"Error: El número de inventario {productoActual.Inventario} ya está registrado.";
+                return;
+            }
+
+            productos.Add(new Producto
+            {
+                Inventario = productoActual.Inventario,
+                Nombre = productoActual.Nombre,
+                Departamento = productoActual.Departamento
+            });
+        }
+        else
+        {
+            var productoExistente = productos.Find(p => p.Inventario == inventarioOriginal);
+            if (productoExistente != null)
+            {
+                productoExistente.Inventario = productoActual.Inventario;
+                productoExistente.Nombre = productoActual.Nombre;
+                productoExistente.Departamento = productoActual.Departamento;
+            }
+            modoEdicion = false;
+        }
+
+        // Guardar en localStorage
+        await localStorage.SetItemAsync("productos", productos);
+
+        productoActual = new Producto();
+    }
+
+    private void EditarProducto(Producto p)
+    {
+        modoEdicion = true;
+        inventarioOriginal = p.Inventario;
+        productoActual = new Producto
+        {
+            Inventario = p.Inventario,
+            Nombre = p.Nombre,
+            Departamento = p.Departamento
+        };
+        mensajeError = "";
+    }
+
+    private void CancelarEdicion()
+    {
+        modoEdicion = false;
+        productoActual = new Producto();
+        mensajeError = "";
+    }
+
+    private async Task EliminarProducto(Producto p)
+    {
+        productos.Remove(p);
+        mensajeError = "";
+        await localStorage.SetItemAsync("productos", productos);
+    }
+
+    private void MostrarExistencias() => mostrarExistencias = true;
+    private void MostrarListado() => mostrarExistencias = false;
+
+    private List<Existencia> ObtenerExistencias()
+    {
+        var listaExistencias = new List<Existencia>();
+
+        // Contar productos por departamento
+        int frutas = 0;
+        int verduras = 0;
+        int lacteos = 0;
+
+        foreach (var p in productos)
+        {
+            if (p.Departamento == "Frutas") frutas++;
+            if (p.Departamento == "Verduras") verduras++;
+            if (p.Departamento == "Lácteos") lacteos++;
+        }
+
+        if (frutas > 0) listaExistencias.Add(new Existencia { Departamento = "Frutas", Cantidad = frutas });
+        if (verduras > 0) listaExistencias.Add(new Existencia { Departamento = "Verduras", Cantidad = verduras });
+        if (lacteos > 0) listaExistencias.Add(new Existencia { Departamento = "Lácteos", Cantidad = lacteos });
+
+        return listaExistencias;
+    }
+
+    public class Existencia
+    {
+        public string Departamento { get; set; } = "";
+        public int Cantidad { get; set; }
+    }
+}
