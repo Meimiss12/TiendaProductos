@@ -208,9 +208,6 @@ C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\bin\Debug\net10.0\www
 C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\bin\Debug\net10.0\wwwroot\_framework\icudt_CJK.tjcz0u77k5.dat
 C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\bin\Debug\net10.0\wwwroot\_framework\icudt_EFIGS.tptq2av103.dat
 C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\bin\Debug\net10.0\wwwroot\_framework\icudt_no_CJK.lfu7j35m59.dat
-C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\bin\Debug\net10.0\wwwroot\_framework\TiendaProductos.lxt2vuwv6y.wasm
-C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\bin\Debug\net10.0\wwwroot\_framework\TiendaProductos.bfyfil8iqa.pdb
-C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\bin\Debug\net10.0\wwwroot\_framework\dotnet.raytg6hoa0.js
 C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\bin\Debug\net10.0\wwwroot\_framework\blazor.webassembly.0o6sltz4v8.js.gz
 C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\bin\Debug\net10.0\wwwroot\_framework\Blazored.LocalStorage.12n6dz54qr.wasm.gz
 C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\bin\Debug\net10.0\wwwroot\_framework\Microsoft.AspNetCore.Authorization.y1346zxmv7.wasm.gz
@@ -420,9 +417,6 @@ C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\bin\Debug\net10.0\www
 C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\bin\Debug\net10.0\wwwroot\_framework\icudt_CJK.tjcz0u77k5.dat.gz
 C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\bin\Debug\net10.0\wwwroot\_framework\icudt_EFIGS.tptq2av103.dat.gz
 C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\bin\Debug\net10.0\wwwroot\_framework\icudt_no_CJK.lfu7j35m59.dat.gz
-C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\bin\Debug\net10.0\wwwroot\_framework\TiendaProductos.lxt2vuwv6y.wasm.gz
-C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\bin\Debug\net10.0\wwwroot\_framework\TiendaProductos.bfyfil8iqa.pdb.gz
-C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\bin\Debug\net10.0\wwwroot\_framework\dotnet.raytg6hoa0.js.gz
 C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\bin\Debug\net10.0\TiendaProductos.staticwebassets.runtime.json
 C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\bin\Debug\net10.0\TiendaProductos.staticwebassets.endpoints.json
 C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\bin\Debug\net10.0\TiendaProductos.dll
@@ -1115,10 +1109,6 @@ C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\obj\Debug\net10.0\com
 C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\obj\Debug\net10.0\compressed\kp61mviijv-{0}-tjcz0u77k5-tjcz0u77k5.gz
 C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\obj\Debug\net10.0\compressed\czvtnlrxum-{0}-tptq2av103-tptq2av103.gz
 C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\obj\Debug\net10.0\compressed\xmfjw4b3qq-{0}-lfu7j35m59-lfu7j35m59.gz
-C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\obj\Debug\net10.0\compressed\l0j0ibcp4w-{0}-lxt2vuwv6y-lxt2vuwv6y.gz
-C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\obj\Debug\net10.0\compressed\bhk82ssger-{0}-bfyfil8iqa-bfyfil8iqa.gz
-C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\obj\Debug\net10.0\compressed\46l3d5gejf-{0}-raytg6hoa0-raytg6hoa0.gz
-C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\obj\Debug\net10.0\compressed\b9gxay6n3p-{0}-uqtqn5ebkf-uqtqn5ebkf.gz
 C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\obj\Debug\net10.0\staticwebassets.build.json
 C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\obj\Debug\net10.0\staticwebassets.build.json.cache
 C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\obj\Debug\net10.0\staticwebassets.development.json
@@ -1129,3 +1119,14 @@ C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\obj\Debug\net10.0\Tie
 C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\obj\Debug\net10.0\refint\TiendaProductos.dll
 C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\obj\Debug\net10.0\TiendaProductos.pdb
 C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\obj\Debug\net10.0\ref\TiendaProductos.dll
+C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\obj\Debug\net10.0\TiendaProductos.sourcelink.json
+C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\bin\Debug\net10.0\wwwroot\_framework\TiendaProductos.kv2d1uwoqc.wasm
+C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\bin\Debug\net10.0\wwwroot\_framework\TiendaProductos.jvj213og2y.pdb
+C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\bin\Debug\net10.0\wwwroot\_framework\dotnet.67j4rciqy7.js
+C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\bin\Debug\net10.0\wwwroot\_framework\TiendaProductos.kv2d1uwoqc.wasm.gz
+C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\bin\Debug\net10.0\wwwroot\_framework\TiendaProductos.jvj213og2y.pdb.gz
+C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\bin\Debug\net10.0\wwwroot\_framework\dotnet.67j4rciqy7.js.gz
+C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\obj\Debug\net10.0\compressed\l0j0ibcp4w-{0}-kv2d1uwoqc-kv2d1uwoqc.gz
+C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\obj\Debug\net10.0\compressed\bhk82ssger-{0}-jvj213og2y-jvj213og2y.gz
+C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\obj\Debug\net10.0\compressed\46l3d5gejf-{0}-67j4rciqy7-67j4rciqy7.gz
+C:\Users\ferve\Documents\PrograWeb\P1\act8\TiendaProductos\obj\Debug\net10.0\compressed\b9gxay6n3p-{0}-ddasjpaobr-ddasjpaobr.gz

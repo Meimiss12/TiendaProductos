@@ -5,7 +5,7 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
   "mainAssemblyName": "TiendaProductos",
   "applicationEnvironment": "Development",
   "resources": {
-    "hash": "sha256-cHp/3YNMar0Cro+b8aj9fmXdjFqixEahRlhJsGf8xNk=",
+    "hash": "sha256-UKR6ESa0QRhbBAKtly8cTSxYYMwq5LnujrvUGyB6FpA=",
     "jsModuleNative": [
       {
         "name": "dotnet.native.98v1chuo8c.js"
@@ -1044,15 +1044,15 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "TiendaProductos.wasm",
-        "name": "TiendaProductos.lxt2vuwv6y.wasm",
-        "integrity": "sha256-94Sajc84Sczm5QXnLbR03u2FHAHI1KEZbypqQWRwO8w="
+        "name": "TiendaProductos.kv2d1uwoqc.wasm",
+        "integrity": "sha256-0CjUTKeOWMw7j/ZO/ax9nKwzDAG7ZYzFMZD5x12TOww="
       }
     ],
     "pdb": [
       {
         "virtualPath": "TiendaProductos.pdb",
-        "name": "TiendaProductos.bfyfil8iqa.pdb",
-        "integrity": "sha256-ByLzh7eO/ZV017c28xPbssaphzOusAjqo0//JJo6o60="
+        "name": "TiendaProductos.jvj213og2y.pdb",
+        "integrity": "sha256-4SHtNfAsJjivpvXcDBA1ZlFLBV3lO+SBMjDLOq7zjiY="
       }
     ],
     "libraryInitializers": [
